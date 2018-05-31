@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Hello World | 小白的全栈之路</title>
+<title>Hexo 博客搭建(有效法一) | 小白的全栈之路</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小白的全栈之路" type="application/atom+xml">
@@ -130,9 +130,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Hello World">
+        <h1 id="Hexo 博客搭建(有效法一)">
             
-	            Hello World
+	            Hexo 博客搭建(有效法一)
             
         </h1>
         <div class="post-meta">
@@ -140,8 +140,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
+        <a href="/categories/工具">
+            工具
         </a>
     </span>
     
@@ -160,7 +160,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/31</span>
+            <span class="date-meta">2018/06/01</span>
         </span>
     
 </div>
@@ -170,15 +170,113 @@
     </div>
     
     <div class="post-body post-content">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>###Hexo:</p>
+<p>hexo是一个基于Node.js的博客框架，我们可以用hexo既快速又方便的生成博客网页并托管在github上。</p>
+<p>如果你根据官网文档没有将博客搭建好，那么本文将是你的福利哟！</p>
+<h3 id="1-安装Git-Bash"><a href="#1-安装Git-Bash" class="headerlink" title="1.安装Git Bash"></a>1.安装Git Bash</h3><p>进入Git下载官网（<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a>），点击<img src="https://img-blog.csdn.net/20180416193751316?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">下载exe文件</p>
+<p>运行安装，一直默认点next（安装路径自行选择）</p>
+<p>安装成功后右击桌面菜单项会多出<img src="https://img-blog.csdn.net/20180416194928729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">，单击Git Bash Here可直接运行Git，界面如下</p>
+<p><img src="https://img-blog.csdn.net/20180416211232631?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<h3 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h3><p>（前面提到过hexo是一个基于Node.js的，我们安装hexo前要用到Node.js的npm工具）</p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a>  建议选择LTS版</p>
+<p>运行安装，安装路径自行选择，一直默认点next，（不过要留心Custom Setup这一步，点一下Add to Path再点<code>next，这样就不用后面手动配置环境变量了~）</code></p>
+<p><code></code></p>
+<p><code>查看Node.js版本：在cmd命令行或Git Bash输入命令node -v查看版本号</code></p>
+<p> <img src="https://img-blog.csdn.net/20180416202647987?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> </p>
+<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>（这里我们不用npm i -g hexo命令安装hexo，这要访问外网容易会被“墙”，而是使用 <em>淘宝NPM镜像</em> 帮助安装）</p>
+<p>新建一个文件夹（用来存放你用hexo搭建的blog项目，我这文件夹名为blog）</p>
+<p>右击该文件夹，点击Git Bash进入Git输入以下命令:</p>
+<blockquote>
+<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p><img src="https://img-blog.csdn.net/2018041812521566?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+</blockquote>
+<p>等待一段时间下载完成后会出现 $ 开始符号，再输入命令:</p>
+<blockquote>
+<p>cnpm i -g hexo-cli</p>
+<p>（注意！当我们使用 <em>淘宝NPM镜像</em> 后，以后使用npm安装工具一律把npm改为cnpm，可自行百度区别两者）</p>
+</blockquote>
+<p>待安装成功后，可查看版本号确认，命令：</p>
+<blockquote>
+<p>hexo -v</p>
+<p><img src="https://img-blog.csdn.net/20180416215052189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+</blockquote>
+<p>输入初始化命令：hexo init，初始化完成后你的文件夹会出现以下文件：</p>
+<blockquote>
+<p><img src="https://img-blog.csdn.net/20180416215431199?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+</blockquote>
+<p>安装生成器</p>
+<blockquote>
+<p>cnpm install</p>
+</blockquote>
+<p>到这里hexo搭建好了，可以开启hexo服务测试一下，命令：</p>
+<blockquote>
+<p>hexo s</p>
+<p><img src="https://img-blog.csdn.net/20180416220921143?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+</blockquote>
+<p>​       浏览器访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>就可以看见自己博客了！</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>### </p>
+<p>### </p>
+<p>### </p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><p>### </p>
+<h3 id="4-实现Git本地管理你的github库"><a href="#4-实现Git本地管理你的github库" class="headerlink" title="4.实现Git本地管理你的github库"></a>4.实现Git本地管理你的github库</h3><h3 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h3><p>打开你的Git Bash（在哪打开都一样），进行以下配置：</p>
+<blockquote>
+<p>git config –global user.name “bettmaner”        //设置用户名</p>
+<p>git config –global user.email “<a href="mailto:175****428@qq.com" target="_blank" rel="noopener">175****428@qq.com</a>“         //设置用户邮箱</p>
+</blockquote>
+<h4 id="创建SSH"><a href="#创建SSH" class="headerlink" title="创建SSH"></a>创建SSH</h4><p>（SSH key是Git与github之间的传输密匙，有了它每次提交文件就不需要再输入用户名和密码了。 ）</p>
+<p>在Git Bash中输入：</p>
+<blockquote>
+<p><code>ssh-keygen -t rsa -C &quot;175****428@qq.com&quot;</code></p>
+</blockquote>
+<p>​       这过程会需要你输入一些东西，直接按回车就行</p>
+<p>复制ssh key命令：</p>
+<blockquote>
+<p>clip &lt; ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<p>将复制的ssh添加到github上：</p>
+<p><img src="https://img-blog.csdn.net/2018041710382628?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<h3 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="https://img-blog.csdn.net/20180417104926407?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></h3><h3 id="-4"><a href="#-4" class="headerlink" title=" "></a> </h3><h3 id="-5"><a href="#-5" class="headerlink" title=""></a><img src="https://img-blog.csdn.net/20180417104621181?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></h3><p>回到Git Bsah验证你的ssh是否有效：</p>
+<blockquote>
+<h3 id="ssh-T-git-github-com"><a href="#ssh-T-git-github-com" class="headerlink" title="ssh -T git@github.com"></a>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></h3></blockquote>
+<blockquote>
+<h3 id="最后一句出现你github名证明你成功了"><a href="#最后一句出现你github名证明你成功了" class="headerlink" title="最后一句出现你github名证明你成功了"></a>最后一句出现你github名证明你成功了</h3></blockquote>
+<blockquote>
+<p><img src="https://img-blog.csdn.net/20180417105507461?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+</blockquote>
+<h3 id="-6"><a href="#-6" class="headerlink" title=" "></a> </h3><h3 id="5-将博客部署到github上"><a href="#5-将博客部署到github上" class="headerlink" title="5.将博客部署到github上"></a>5.将博客部署到github上</h3><p>（激动人心的时刻！博客已用hexo搭建好了，现在就是要将博客放github就能让人访问到了）</p>
+<h5 id="-7"><a href="#-7" class="headerlink" title=" "></a> </h5><h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>进入你的github账号创建版本库，库名为username.github.io,其中username为你的github名称，步骤如下</p>
+<p>   <img src="https://img-blog.csdn.net/20180416223410812?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p><img src="https://img-blog.csdn.net/20180416224357225?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<h4 id="修改hexo文件配置"><a href="#修改hexo文件配置" class="headerlink" title="修改hexo文件配置"></a>修改hexo文件配置</h4><p>此处可参考网址 <a href="https://blog.csdn.net/jzooo/article/details/46781805" target="_blank" rel="noopener">https://blog.csdn.net/jzooo/article/details/46781805</a>（“管理博客”一步）</p>
+<p>进入你的blog文件夹，（建议用编辑器）修改根目录下的_config.yml文件</p>
+<p><img src="https://img-blog.csdn.net/2018041711232132?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>_config.yml中其它自行修改，最后一行必须这样配置（冒号后有一个英语半角空格）：</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/bettmaner/bettmaner.github.io.git" target="_blank" rel="noopener">https://github.com/bettmaner/bettmaner.github.io.git</a>   （蓝体改为自己的github名）</p>
+<p>  branch: master</p>
+<p>保存</p>
+<p>### </p>
+<h4 id="上传blog到github上"><a href="#上传blog到github上" class="headerlink" title="上传blog到github上"></a>上传blog到github上</h4><p>右击blog文件夹进入Git Bash，输入安装命令：</p>
+<blockquote>
+<p>cnpm install hexo-deployer-git –save</p>
+<p><img src="https://img-blog.csdn.net/20180417130010855?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JldHRtYW5lcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>（此安装命令能让你使用hexo deploy命令上传blog到github上）</p>
+</blockquote>
+<p>上传命令</p>
+<blockquote>
+<p>hexo d（即hexo deploy）</p>
+</blockquote>
+<blockquote>
+<p>第一次deploy会弹出窗口需要输入你的github账号和密码</p>
+</blockquote>
+<p>现在就可以访问username.github.io进入你的博客了~</p>
+<p>以后修改blog后执行hexo s或hexo d之前建议先执行这2个命令行（作用自己百度哟）：</p>
+<blockquote>
+<p>hexo clean</p>
+<p>hexo g（即hexo generate）</p>
+</blockquote>
+<p>### </p>
+<h3 id="-8"><a href="#-8" class="headerlink" title=" "></a> </h3><p>-————————————————————————————————————–</p>
+<p>捣腾这个一两天，因该是官网是国外镜像原因吧，不稳定，还是国内给力。</p>
 
     </div>
 
@@ -196,11 +294,11 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/06/01/Hexo/" class="pre-post btn btn-default" title='Hexo 博客搭建(有效法一)'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Hexo 博客搭建(有效法一)</span>
-        </a>
     
+        <a href="/2018/05/31/hello-world/" class="next-post btn btn-default" title='Hello World'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hello World</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
     
 </div>
 
