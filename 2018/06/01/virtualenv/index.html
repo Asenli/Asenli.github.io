@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Archives: 2018/5 | 小白的全栈之路</title>
+<title>虚拟环境创建指南VIRTUALENV | 小白的全栈之路</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小白的全栈之路" type="application/atom+xml">
@@ -126,27 +126,144 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">2018年 5月</h1>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="虚拟环境创建指南VIRTUALENV">
+            
+	            虚拟环境创建指南VIRTUALENV
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/后端">
+            后端
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
         
-          <li class="post-items" _href="/2018/05/31/hello-world/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/31/hello-world/"> Hello World </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/25/redis安装以及基础语法/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/25/redis安装以及基础语法/"> redis安装以及基础语法 </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/06/01</span>
+        </span>
+    
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><ol>
+<li>本教程中使用到的python版本均为python3.x版本，由于本人安装的是python3.6.3版本，所以一下的课程均是在此基础上进行的。<br><br></li>
+<li>virtualenv使用场景:当开发成员负责多个项目的时候，每个项目安装的库又是有很多差距的时候，会使用虚拟环境将每个项目的环境给隔离开来。<br><br><br>比如，在有一个老项目已经开发维护了3年了，里面很多库都是比较老的版本了。例如python使用的是2.7版本的。但是新项目使用的python版本是3.6的。为了解决这种项目执行环境的冲突，所以引入了虚拟环境virtualenv。<br>　当然除了virtualenv可以起到隔离环境的作用，还有其他技术方案来实现，而且上线流程简单，大大减轻运维人员的出错率，比如每一个项目使用一个docker镜像，在镜像中去安装项目所需的环境，库版本等等</li>
+</ol>
+<h3 id="python环境的配置"><a href="#python环境的配置" class="headerlink" title="python环境的配置"></a>python环境的配置</h3><ol>
+<li>在cmd中能通过python去启动，如果不行直接跳到第三步</li>
+</ol>
+<p><img src="images/python.png" alt="图"><br><br></p>
+<ol start="2">
+<li>在cmd中能通过pip3启动安装软件，如果不行直接跳到第三步<br><img src="images/pip3.png" alt="图"><br><br></li>
+</ol>
+<p>3.配置python环境和pip环境<br><img src="images/python_pip_envir.png" alt="图"></p>
+<ol start="4">
+<li><p>确认pip安装成功，如果Scritp文件夹下没有pip可执行文件，则执行第五步。</p>
+</li>
+<li><p>由于python3.6安装以后，在Scripts文件中没有pip的可执行软件，需要输入一下命令进行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m ensurepip</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="images/ensurepip.png" alt="图"><br>注：现在在python的安装文件夹Scripts下就有pip.exe以及easy_install.exe等可执行文件了，就可以使用pip安装啦~</p>
+<h3 id="windows中安装使用"><a href="#windows中安装使用" class="headerlink" title="windows中安装使用"></a>windows中安装使用</h3><ol>
+<li>安装virtualenv<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install  virtualenv</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="images/pip_virtualenv.png" alt="图"></p>
+<ol start="2">
+<li>创建虚拟环境</li>
+</ol>
+<p>先查看一下安装虚拟环境有那些参数，是必须填写的<br><br><br><img src="images/virtualenv_help.png" alt="图"><br>注意两个参数：<br>–no-site-packages和-p参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv --no-site-package venv</span><br></pre></td></tr></table></figure>
+<p>以下是指定安装虚拟环境中的python版本的安装方式：<br><img src="images/virtualenv_env_p.png" alt="图"><br><br></p>
+<ol start="3">
+<li>进入/退出env<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">进入　cd env/Scripts/文件夹  在activate命令</span><br><span class="line"></span><br><span class="line">退出　deactivate</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="ubuntu中安装使用"><a href="#ubuntu中安装使用" class="headerlink" title="ubuntu中安装使用"></a>ubuntu中安装使用</h3><ol>
+<li>安装virtualenv</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-virtualenv</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建包含python3版本的虚拟环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p /usr/bin/python3 env</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>env代表创建的虚拟环境的名称</p>
+<ol start="3">
+<li><p>进入/退出env</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">进入　source env/bin/activate</span><br><span class="line"></span><br><span class="line">退出　deactivate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pip使用</p>
+</li>
+</ol>
+<p>查看虚拟环境下安装的所有的包　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure></p>
+<p>查看虚拟环境重通过pip安装的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/06/01/Djangolog/" class="pre-post btn btn-default" title='Django日志使用'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Django日志使用</span>
+        </a>
+    
+    
+        <a href="/2018/06/01/Hexo/" class="next-post btn btn-default" title='Hexo 博客搭建(有效法一)'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hexo 博客搭建(有效法一)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
 
 
 
