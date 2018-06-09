@@ -155,9 +155,9 @@
     
     <div class="post-body post-content">
         <p>1.首先确保阿里云实例运行状态(如果过下面过程中遇到不可解决问题，初始化实例)</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528510777491.png" alt="1528510777491"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528510777491.png?raw=true" alt="1528510777491"></p>
 <p>2.Xshell 连接登录服务器</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528510910362.png" alt="1528510910362"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528510910362.png?raw=true" alt="1528510910362"></p>
 <p>现在我们的状态是在一个新的实例化下进行操作，换言之我们需要安装：</p>
 <ol>
 <li>MariaDB</li>
@@ -176,7 +176,7 @@
 <p><strong>如果忘记上面密码，更改密码</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1. # systemctl stop mariadb           /先停掉当前的mysql进程，不然执行下一步说进程已经存在/  </span><br><span class="line">2. # mysqld_safe --skip-grant-tables &amp;                /后台直接这个mysql，界面中还会出现日志，直接ctrl+c进入命令行输入/   </span><br><span class="line">3. # ps -ef | grep mariadb                       /看进程，会突出显示--skip-grant-tables/  </span><br><span class="line">4.   mysql     3607  3368  0 18:05 pts/0    00:00:00 /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql   </span><br><span class="line">5.   --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --skip-grant-tables --log-error=/var/log/mariadb/mariadb.log   </span><br><span class="line">6.   --pid-file=/var/run/mariadb/mariadb.pid --socket=/var/lib/mysql/mysql.sock  </span><br><span class="line">7. # mysql                              /直接进入mysql，不需要密码等，执行第一步中方法a里两种方式中任何一种即可/  </span><br><span class="line">8. MariaDB [(none)]&gt; use mysql;  </span><br><span class="line">9. MariaDB [mysql]&gt; UPDATE user SET password=password(&apos;更改的密码&apos;) WHERE user=&apos;root&apos;;  </span><br><span class="line">10. MariaDB [mysql]&gt; flush privileges;   </span><br><span class="line">11. MariaDB [mysql]&gt; exit;                /这个时候用参数--skip-grant-tables启动的mysql已经会要求输入密码才能进入了/  </span><br><span class="line">12. # pkill mysql                                /用pkill来杀,kill不死，kill之后自动起来一个/  </span><br><span class="line">13. # systemctl start mariadb            /启动正常的mysql/  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ps： 参考   https://blog.csdn.net/u014345860/article/details/78741673</span><br></pre></td></tr></table></figure>
 <p>打开mysql   新建连接  主机写公网ip</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528512118949.png" alt="1528512118949"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528512118949.png?raw=true" alt="1528512118949"></p>
 <h5 id="开启远程连接"><a href="#开启远程连接" class="headerlink" title="开启远程连接"></a>开启远程连接</h5><p>在mysql数据库中的user表中可以看到默认是只能本地连接的，所有可以添加一个新的用户，该用户可以远程访问</p>
 <p>本人创建用户时是 面向所以的ip 所以执行下面第三条命令   和最大权限命令 </p>
 <h5 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a>1. 创建用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 先使用数据库</span><br><span class="line">use mysql;</span><br><span class="line"></span><br><span class="line"># 针对ip</span><br><span class="line">create user &apos;root&apos;@&apos;192.168.10.10&apos; identified by &apos;password&apos;;</span><br><span class="line"></span><br><span class="line">#全部</span><br><span class="line"> create user &apos;root&apos;@&apos;%&apos; identified by &apos;password&apos;;</span><br></pre></td></tr></table></figure>
@@ -203,8 +203,8 @@
 <li>安装环境需要的包</li>
 </ol>
 <p>ps:这里需要先确定 在项目里有写的一个txt文件</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528512626688.png" alt="1528512626688"></p>
-<p>然后在你放该txt文件夹下执行<img src="C:\Users\Lenovo\AppData\Local\Temp\1528512812241.png" alt="1528512812241"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528512626688.png?raw=true" alt="1528512626688"></p>
+<p>然后在你放该txt文件夹下执行<img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528512812241.png?raw=true" alt="1528512812241"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r pip.txt</span><br><span class="line"></span><br><span class="line">其中pip.txt文件中记录的是需要安装包的名称以及对应的版本</span><br></pre></td></tr></table></figure>
 <h3 id="5-部署"><a href="#5-部署" class="headerlink" title="5.部署"></a>5.部署</h3><p>该部署采用的是cenots7系统来部署</p>
 <p>Django的项目中，在工程目录下settings.py文件中有一个DEBUG=True参数，如果DEBUG=False则会出现js,css，img无法加载的情况出现。</p>
@@ -213,9 +213,9 @@
 <h5 id="1-测试环境中部署方式"><a href="#1-测试环境中部署方式" class="headerlink" title="1. 测试环境中部署方式"></a>1. 测试环境中部署方式</h5><p>在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=[&apos;*&apos;]</span><br><span class="line"></span><br><span class="line">修改工程目录下的urls.py</span><br><span class="line"></span><br><span class="line">from django.views.static import serve</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^axf/&apos;, include(&apos;axf.urls&apos;, namespace=&apos;axf&apos;)),</span><br><span class="line"></span><br><span class="line">	# 增加以下的url路由</span><br><span class="line">    url(r&apos;^static/(?P&lt;path&gt;.*)$&apos;, serve, &#123;&quot;document_root&quot;: settings.STATICFILES_DIRS[0]&#125;),</span><br><span class="line"></span><br><span class="line">    url(r&apos;^$&apos;, views.home)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>进入项目虚拟环境</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528513333695.png" alt="1528513333695"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528513333695.png?raw=true" alt="1528513333695"></p>
 <p>在虚拟环境下进入项目manage.py目录执行，测试是否成功 </p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528513478225.png" alt="1528513478225"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528513478225.png?raw=true" alt="1528513478225"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py runserver 0.0.0.0:8080</span><br></pre></td></tr></table></figure>
 <p>这里本地测试就成功了！！</p>
 <h5 id="2-正式环境中部署方式"><a href="#2-正式环境中部署方式" class="headerlink" title="2. 正式环境中部署方式"></a>2. 正式环境中部署方式</h5><p>正式环境中部署为nginx+uwsgi来部署django项目</p>
@@ -233,11 +233,11 @@
 <p>e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http </span><br><span class="line"></span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br><span class="line"></span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <p>运行结果如下:</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528512950997.png" alt="1528512950997"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528512950997.png?raw=true" alt="1528512950997"></p>
 <h4 id="3-配置uwsgi"><a href="#3-配置uwsgi" class="headerlink" title="3.配置uwsgi"></a>3.配置uwsgi</h4><h5 id="3-1-安装uwsgi"><a href="#3-1-安装uwsgi" class="headerlink" title="3.1 安装uwsgi"></a>3.1 安装uwsgi</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install uwsgi</span><br></pre></td></tr></table></figure>
 <p>然后进行环境变量的配置， 建立软连接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi</span><br></pre></td></tr></table></figure>
-<h4 id="4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>本案例的<img src="C:\Users\Lenovo\AppData\Local\Temp\1528515087704.png" alt="1528515087704">文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
+<h4 id="4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>本案例的<img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528515087704.png?raw=true" alt="1528515087704">文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
 <p>项目的目录结构如下：conf env logs src</p>
 <p><a href="https://github.com/coco369/knowledge/blob/master/django/images/django_centos_project_mulu.png" target="_blank" rel="noopener"><img src="https://github.com/coco369/knowledge/raw/master/django/images/django_centos_project_mulu.png" alt="图"></a></p>
 <p>其中：</p>
@@ -253,11 +253,11 @@
 <p><strong>其次</strong>：修改总的nginx的配置文件，让总的nginx文件包含我们自定义的项目的axfnginx.conf文件</p>
 <p>总的nginx配置文件在：/etc/nginx/nginx.conf中</p>
 <p>这不是文本开始位置，是在文本中间位置的include添加下面的一句话！！</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528513752162.png" alt="1528513752162"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528513752162.png?raw=true" alt="1528513752162"></p>
 <p>以上步骤操作完成以后，需要重启nginx：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
 <p>如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：</p>
-<p><img src="C:\Users\Lenovo\AppData\Local\Temp\1528514054959.png" alt="1528514054959"></p>
+<p><img src="https://github.com/Asenli/Asenli.github.io/blob/master/images/1528514054959.png?raw=true" alt="1528514054959"></p>
 <h1 id="最后运行项目"><a href="#最后运行项目" class="headerlink" title="最后运行项目:"></a>最后运行项目:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --ini uwsgi.ini</span><br></pre></td></tr></table></figure>
     </div>
 
