@@ -237,9 +237,8 @@
 <h4 id="3-配置uwsgi"><a href="#3-配置uwsgi" class="headerlink" title="3.配置uwsgi"></a>3.配置uwsgi</h4><h5 id="3-1-安装uwsgi"><a href="#3-1-安装uwsgi" class="headerlink" title="3.1 安装uwsgi"></a>3.1 安装uwsgi</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install uwsgi</span><br></pre></td></tr></table></figure>
 <p>然后进行环境变量的配置， 建立软连接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/coco369/knowledge/blob/master/django/images/django_centios_uwsgi.png" target="_blank" rel="noopener"><img src="https://github.com/coco369/knowledge/raw/master/django/images/django_centios_uwsgi.png" alt="图"></a></p>
-<h4 id="4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>本案例的配置文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
-<p>项目的目录结构如下：</p>
+<h4 id="4-配置项目代码，配置项目nginx，配置uwsgi-ini等"><a href="#4-配置项目代码，配置项目nginx，配置uwsgi-ini等" class="headerlink" title="4. 配置项目代码，配置项目nginx，配置uwsgi.ini等"></a>4. 配置项目代码，配置项目nginx，配置uwsgi.ini等</h4><p>本案例的<img src="C:\Users\Lenovo\AppData\Local\Temp\1528515087704.png" alt="1528515087704">文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护</p>
+<p>项目的目录结构如下：conf env logs src</p>
 <p><a href="https://github.com/coco369/knowledge/blob/master/django/images/django_centos_project_mulu.png" target="_blank" rel="noopener"><img src="https://github.com/coco369/knowledge/raw/master/django/images/django_centos_project_mulu.png" alt="图"></a></p>
 <p>其中：</p>
 <p>conf是配置文件，用于存放项目的nginx.conf文件，uwsgi.ini文件</p>
